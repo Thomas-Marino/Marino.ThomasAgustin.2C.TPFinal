@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
+using Entidades.BaseDeDatos;
 
 namespace Ejercicio_Integrador_N2_ThomasMarino
 {
@@ -29,6 +30,7 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             try
             {
                 Usuario usuario = new Usuario(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
+                GestorPersonasSqlDelivered.CrearNuevaCuenta(usuario);
                 MessageBox.Show($"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}", "Cuenta generada con éxito!");
                 this.Close();
             }
@@ -49,6 +51,10 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ContraseñaInvalidaException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (BaseDeDatosException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

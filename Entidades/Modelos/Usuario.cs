@@ -1,4 +1,5 @@
-﻿using Entidades.Excepciones;
+﻿using Entidades.BaseDeDatos;
+using Entidades.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Entidades.Modelos
         private string nombreUsuario;
         private string contraseña;
         public string NombreUsuario { get {return nombreUsuario; } }
+        public string Contraseña { get {return contraseña; } }
 
         public Usuario(string nombre, string apellido, string dni, string usuario, string contraseña)
             : base(nombre, apellido, dni)
@@ -46,6 +48,11 @@ namespace Entidades.Modelos
             if (string.IsNullOrWhiteSpace(usuario))
             {
                 throw new UsuarioInvalidoException("Error. Ingrese un nombre de usuario.");
+            }
+
+            if (GestorPersonasSqlDelivered.VerificarExistenciaUsuario(usuario))
+            {
+                throw new UsuarioInvalidoException("Error. El nombre de usuario ingresado ya está en uso.");
             }
 
             if (usuario.Length >= 5 && usuario.Length <= 20)

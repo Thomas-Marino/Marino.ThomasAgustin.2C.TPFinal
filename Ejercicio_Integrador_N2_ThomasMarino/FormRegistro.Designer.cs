@@ -191,6 +191,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(687, 385);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -211,6 +212,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormRegistro";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Creacion de cuenta en Delivered";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

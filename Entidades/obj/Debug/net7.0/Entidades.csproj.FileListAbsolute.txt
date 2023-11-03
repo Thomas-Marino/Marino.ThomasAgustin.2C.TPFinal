@@ -10,3 +10,15 @@ D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\refint\Entidades
 D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.pdb
 D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\ref\Entidades.dll
 D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\bin\Debug\net7.0\Entidades.deps.json
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\bin\Debug\net7.0\Entidades.dll
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\bin\Debug\net7.0\Entidades.pdb
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.AssemblyInfo.cs
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.dll
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\refint\Entidades.dll
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\Entidades.pdb
+C:\Users\thoma\OneDrive\Escritorio\Ejercicio_Integrador_2_Labo2\Entidades\obj\Debug\net7.0\ref\Entidades.dll

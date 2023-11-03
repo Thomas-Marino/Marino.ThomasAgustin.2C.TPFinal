@@ -1,4 +1,5 @@
-﻿using Entidades.Excepciones;
+﻿using Entidades.BaseDeDatos;
+using Entidades.Excepciones;
 
 namespace Entidades.Modelos
 {
@@ -69,11 +70,25 @@ namespace Entidades.Modelos
         {
             if (dni.Length == 8 || dni.Length == 7) 
             {
+                bool primerCaracter = true;
+                foreach (char c in dni)
+                {
+                    if (c == '0' && primerCaracter)
+                    {
+                        throw new DniInvalidoException("Error. El dni no puede empezar en 0.");
+                    }
+                    primerCaracter = false;
+                }
+
                 try
                 {
+                    if(GestorPersonasSqlDelivered.VerificarExistenciaDni(int.Parse(dni)))
+                    {
+                        throw new DniInvalidoException("Error. Usted ya tiene una cuenta.");
+                    }
                     return int.Parse(dni);
                 }
-                catch (Exception e)
+                catch (FormatException)
                 {
                     throw new DniInvalidoException("Error en el ingreso del DNI. Debe contener solo números");
                 }

@@ -1,4 +1,4 @@
-using Entidades;
+using Entidades.BaseDeDatos;
 
 namespace Ejercicio_Integrador_N2_ThomasMarino
 {
@@ -24,10 +24,9 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         {
             Application.Exit();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            if (GestorSql.LoggearUsuario(textBox1.Text))
+            if (GestorPersonasSqlDelivered.LoggearCuenta(textBox1.Text, textBox2.Text))
             {
                 MessageBox.Show("Loggee");
             }
