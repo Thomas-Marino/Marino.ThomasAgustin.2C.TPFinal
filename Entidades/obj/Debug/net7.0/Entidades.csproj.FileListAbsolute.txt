@@ -1,0 +1,12 @@
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\bin\Debug\net7.0\Entidades.deps.json
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\bin\Debug\net7.0\Entidades.dll
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\bin\Debug\net7.0\Entidades.pdb
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.AssemblyInfoInputs.cache
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.AssemblyInfo.cs
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.csproj.CoreCompileInputs.cache
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.dll
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\refint\Entidades.dll
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.pdb
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\ref\Entidades.dll
+D:\Facultad\Progra_Labo_II\Proyectos\Entidades\obj\Debug\net7.0\Entidades.csproj.AssemblyReference.cache
