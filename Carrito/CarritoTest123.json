@@ -1,0 +1,26 @@
+[
+  {
+    "ID": 1,
+    "nombre": "Televisi\u00F3n Negra 24 Pulgadas",
+    "precio": 120000.99,
+    "cantidad": 1,
+    "publicador": "SofiHermosa_22",
+    "comprador": "Test123"
+  },
+  {
+    "ID": 1002,
+    "nombre": "Llave inglesa",
+    "precio": 500,
+    "cantidad": 1,
+    "publicador": "Test123",
+    "comprador": "Test123"
+  },
+  {
+    "ID": 2,
+    "nombre": "Silla",
+    "precio": 412,
+    "cantidad": 1,
+    "publicador": "Alfred_22",
+    "comprador": "Test123"
+  }
+]
