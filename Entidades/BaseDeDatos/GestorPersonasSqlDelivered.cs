@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -106,6 +108,33 @@ namespace Entidades.BaseDeDatos
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public static string ObtenerNombreDelUsuario(string usuario)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(GestorPersonasSqlDelivered.stringConnection))
+                {
+                    string query = "SELECT nombre FROM personas WHERE usuario=@usuario";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    command.Parameters.AddWithValue("usuario", usuario);
+
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        return reader.GetString(0);
+                    }
+                    return "No se encontro ningun nombre asociado a ese usuario.";
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"Hubo un error al obtener el nombre del usuario. {ex}";
             }
         }
 
