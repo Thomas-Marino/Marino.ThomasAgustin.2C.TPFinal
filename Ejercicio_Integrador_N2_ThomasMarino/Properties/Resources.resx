@@ -121,4 +121,19 @@
   <data name="Free_Sample_By_Wix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Free_Sample_By_Wix.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ImgError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgHerramientas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgHerramientas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgMuebles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgMuebles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgTecnología" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgTecnología.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgVehiculos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

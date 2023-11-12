@@ -29,37 +29,38 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            BtnCrearCuenta = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            TxbLoginUsuario = new TextBox();
+            TxbLoginContraseña = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
-            button2 = new Button();
+            BtnIngresar = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Free_Sample_By_Wix;
-            pictureBox1.Location = new Point(-1, 0);
+            pictureBox1.Location = new Point(-1, -8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(192, 58);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // BtnCrearCuenta
             // 
-            button1.Location = new Point(246, 303);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 30);
-            button1.TabIndex = 1;
-            button1.Text = "Crear cuenta";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BtnCrearCuenta.Location = new Point(246, 303);
+            BtnCrearCuenta.Name = "BtnCrearCuenta";
+            BtnCrearCuenta.Size = new Size(115, 30);
+            BtnCrearCuenta.TabIndex = 1;
+            BtnCrearCuenta.Text = "Crear cuenta";
+            BtnCrearCuenta.UseVisualStyleBackColor = true;
+            BtnCrearCuenta.Click += button1_Click;
             // 
             // label1
             // 
@@ -71,24 +72,24 @@
             label1.TabIndex = 2;
             label1.Text = "No tienes cuenta?";
             // 
-            // textBox1
+            // TxbLoginUsuario
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(173, 104);
-            textBox1.MaximumSize = new Size(500, 500);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(283, 35);
-            textBox1.TabIndex = 3;
+            TxbLoginUsuario.Anchor = AnchorStyles.None;
+            TxbLoginUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbLoginUsuario.Location = new Point(173, 104);
+            TxbLoginUsuario.MaximumSize = new Size(500, 500);
+            TxbLoginUsuario.Name = "TxbLoginUsuario";
+            TxbLoginUsuario.Size = new Size(283, 35);
+            TxbLoginUsuario.TabIndex = 3;
             // 
-            // textBox2
+            // TxbLoginContraseña
             // 
-            textBox2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(173, 175);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(283, 35);
-            textBox2.TabIndex = 4;
+            TxbLoginContraseña.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbLoginContraseña.Location = new Point(173, 175);
+            TxbLoginContraseña.Name = "TxbLoginContraseña";
+            TxbLoginContraseña.PasswordChar = '*';
+            TxbLoginContraseña.Size = new Size(283, 35);
+            TxbLoginContraseña.TabIndex = 4;
             // 
             // label2
             // 
@@ -110,36 +111,36 @@
             label3.TabIndex = 6;
             label3.Text = "Contraseña:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Impact", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(-1, 51);
-            label4.Name = "label4";
-            label4.Size = new Size(667, 16);
-            label4.TabIndex = 7;
-            label4.Text = "------------------------------------------------------------------------------------------------------------------------------------";
-            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(204, 9);
+            label5.Location = new Point(197, 8);
             label5.Name = "label5";
             label5.Size = new Size(305, 34);
             label5.TabIndex = 8;
             label5.Text = "Bienvenido a Delivered";
             // 
-            // button2
+            // BtnIngresar
             // 
-            button2.Location = new Point(260, 216);
-            button2.Name = "button2";
-            button2.Size = new Size(88, 32);
-            button2.TabIndex = 9;
-            button2.Text = "Ingresar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            BtnIngresar.Location = new Point(260, 216);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(88, 32);
+            BtnIngresar.TabIndex = 9;
+            BtnIngresar.Text = "Ingresar";
+            BtnIngresar.UseVisualStyleBackColor = true;
+            BtnIngresar.Click += button2_Click;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(622, 44);
+            panel1.TabIndex = 10;
             // 
             // FormIngreso
             // 
@@ -147,23 +148,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(622, 338);
-            Controls.Add(button2);
-            Controls.Add(label5);
-            Controls.Add(label4);
+            Controls.Add(panel1);
+            Controls.Add(BtnIngresar);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxbLoginContraseña);
+            Controls.Add(TxbLoginUsuario);
             Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(pictureBox1);
+            Controls.Add(BtnCrearCuenta);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormIngreso";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ingreso a Delivered";
             FormClosing += FormIngreso_FormClosing;
             Load += FormIngreso_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -171,14 +174,14 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button BtnCrearCuenta;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox TxbLoginUsuario;
+        private TextBox TxbLoginContraseña;
         private Label label2;
         private Label label3;
-        private Label label4;
         private Label label5;
-        private Button button2;
+        private Button BtnIngresar;
+        private Panel panel1;
     }
 }

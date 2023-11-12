@@ -22,6 +22,8 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            FormIngreso formIngreso = Application.OpenForms.OfType<FormIngreso>().FirstOrDefault();
+            formIngreso.Show();
             this.Close();
         }
 
@@ -32,6 +34,8 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 Usuario usuario = new Usuario(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
                 GestorPersonasSqlDelivered.CrearNuevaCuenta(usuario);
                 MessageBox.Show($"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}", "Cuenta generada con éxito!");
+                FormIngreso formIngreso = Application.OpenForms.OfType<FormIngreso>().FirstOrDefault();
+                formIngreso.Show();
                 this.Close();
             }
             catch (NombreinvalidoException ex)
@@ -58,6 +62,16 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormRegistro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormRegistro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

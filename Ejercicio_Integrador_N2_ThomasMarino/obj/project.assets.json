@@ -493,11 +493,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Ejercicio_Integrador_N2_ThomasMarino\\Ejercicio_Integrador_N2_ThomasMarino.csproj",
+      "projectUniqueName": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Ejercicio_Integrador_N2_ThomasMarino\\Ejercicio_Integrador_N2_ThomasMarino.csproj",
       "projectName": "Ejercicio_Integrador_N2_ThomasMarino",
-      "projectPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Ejercicio_Integrador_N2_ThomasMarino\\Ejercicio_Integrador_N2_ThomasMarino.csproj",
+      "projectPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Ejercicio_Integrador_N2_ThomasMarino\\Ejercicio_Integrador_N2_ThomasMarino.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Ejercicio_Integrador_N2_ThomasMarino\\obj\\",
+      "outputPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Ejercicio_Integrador_N2_ThomasMarino\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -514,8 +514,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj"
+            "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj": {
+              "projectPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj"
             }
           }
         }

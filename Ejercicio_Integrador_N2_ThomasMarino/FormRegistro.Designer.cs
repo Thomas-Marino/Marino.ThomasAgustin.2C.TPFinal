@@ -41,9 +41,10 @@
             TxbContraseña = new TextBox();
             pictureBox1 = new PictureBox();
             BtnVolver = new Button();
-            label6 = new Label();
             label7 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // BtnCrearCuenta
@@ -149,9 +150,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Free_Sample_By_Wix;
-            pictureBox1.Location = new Point(-1, -1);
+            pictureBox1.Location = new Point(0, -1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(197, 50);
+            pictureBox1.Size = new Size(197, 43);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
@@ -166,26 +167,26 @@
             BtnVolver.UseVisualStyleBackColor = true;
             BtnVolver.Click += button2_Click;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Impact", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(-1, 42);
-            label6.Name = "label6";
-            label6.Size = new Size(787, 16);
-            label6.TabIndex = 13;
-            label6.Text = "------------------------------------------------------------------------------------------------------------------------------------------------------------";
-            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(202, 8);
+            label7.Location = new Point(203, 8);
             label7.Name = "label7";
             label7.Size = new Size(408, 34);
             label7.TabIndex = 14;
             label7.Text = "Crear una cuenta en Delivered.";
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label7);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(687, 44);
+            panel1.TabIndex = 15;
             // 
             // FormRegistro
             // 
@@ -193,10 +194,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(687, 385);
-            Controls.Add(label7);
-            Controls.Add(label6);
+            Controls.Add(panel1);
             Controls.Add(BtnVolver);
-            Controls.Add(pictureBox1);
             Controls.Add(TxbContraseña);
             Controls.Add(TxbUsuario);
             Controls.Add(TxbDNI);
@@ -215,7 +214,11 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Creacion de cuenta en Delivered";
+            FormClosing += FormRegistro_FormClosing;
+            Load += FormRegistro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,7 +238,7 @@
         private TextBox TxbContraseña;
         private PictureBox pictureBox1;
         private Button BtnVolver;
-        private Label label6;
         private Label label7;
+        private Panel panel1;
     }
 }
