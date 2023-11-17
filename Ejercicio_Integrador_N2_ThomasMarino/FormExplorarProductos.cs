@@ -101,10 +101,10 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             int i = 0;
             foreach (var producto in productosObtenidos)
             {
-                if ((int)producto["stockDelProducto"] != 0) 
+                if ((int)producto["stockDelProducto"] != 0)
                 {
                     listaDeProductos[i] = new ListaDeProductos();
-                    listaDeProductos[i].IdProducto = (int)producto["ID"];
+                    listaDeProductos[i].IdProducto = $"{producto["ID"]}";
                     listaDeProductos[i].NombreDelProducto = (string)producto["nombreDelProducto"];
                     listaDeProductos[i].ImagenCategoriaProducto = (string)producto["categoriaDelProducto"];
                     listaDeProductos[i].CategoriaDelProducto = (string)producto["categoriaDelProducto"];

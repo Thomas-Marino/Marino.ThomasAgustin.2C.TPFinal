@@ -1,6 +1,7 @@
 ﻿using Ejercicio_Integrador_N2_ThomasMarino.Properties;
-using Entidades;
+using Entidades.Archivos;
 using Entidades.Excepciones;
+using Entidades.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         private string _publicadorDelProducto;
         private string _imagenCategoriaProducto;
         private string categoriaDelProducto;
-        private int idProducto;
+        private string idProducto;
 
         public ListaDeProductos()
         {
@@ -53,8 +54,10 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                     {
                         { "ID", IdProducto },
                         { "nombre", NombreDelProducto },
-                        { "precio", float.Parse(PrecioDelProducto) * Convert.ToInt32(NUDCantidadProductoDeseada.Value) },
+                        { "categoria", CategoriaDelProducto },
+                        { "precio unitario", float.Parse(PrecioDelProducto) },
                         { "cantidad", NUDCantidadProductoDeseada.Value },
+                        { "precio total", float.Parse(PrecioDelProducto) * Convert.ToInt32(NUDCantidadProductoDeseada.Value) },
                         { "publicador", PublicadorDelProducto },
                         { "comprador", compradorDelProducto }
                     };
@@ -76,13 +79,14 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                         {
                             { "ID", IdProducto },
                             { "nombre", NombreDelProducto },
-                            { "precio", float.Parse(PrecioDelProducto) * Convert.ToInt32(NUDCantidadProductoDeseada.Value) },
+                            { "categoria", CategoriaDelProducto },
+                            { "precio unitario", float.Parse(PrecioDelProducto) },
                             { "cantidad", NUDCantidadProductoDeseada.Value },
+                            { "precio total", float.Parse(PrecioDelProducto) * Convert.ToInt32(NUDCantidadProductoDeseada.Value) },
                             { "publicador", PublicadorDelProducto },
                             { "comprador", compradorDelProducto }
                         }
                     };
-                    
                 }
 
                 serializadorArchivos.Serializar(datos, ruta);
@@ -94,7 +98,7 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         }
 
         #region "Propiedades"
-        public int IdProducto
+        public string IdProducto
         {
             get { return idProducto; }
             set { idProducto = value; }
@@ -110,7 +114,7 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         public string ImagenCategoriaProducto
         {
             get { return _imagenCategoriaProducto; }
-            set { _imagenCategoriaProducto = value; PbImagenProducto.Image = AsignadorDeImagenes(value); }
+            set { PbImagenProducto.Image = AsignadorDeImagenes(value); }
         }
         [Category("Propiedades Añadidas")]
         public string NombreDelProducto
@@ -137,20 +141,14 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             set { _publicadorDelProducto = value; LblPublicadorProducto.Text = FormatearString("Publicador:", value); }
         }
 
-        private string FormatearString(string mensaje, string valor)
-        {
-            return $"{mensaje} {valor}";
-        }
-
         #endregion
         #region "métodos"
         public void AsignarLimiteDeCompra(decimal limite)
         {
-            NUDCantidadProductoDeseada.Maximum = limite;
-            NUDCantidadProductoDeseada.Minimum = 1;
+            this.NUDCantidadProductoDeseada.Maximum = limite;
+            this.NUDCantidadProductoDeseada.Minimum = 1;
         }
-
-        private Image AsignadorDeImagenes(string categoria)
+        private static Image AsignadorDeImagenes(string categoria)
         {
             switch (categoria)
             {
@@ -164,10 +162,12 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                     return Resources.ImgTecnología;
                 default:
                     return Resources.ImgError;
-
             }
         }
+        private static string FormatearString(string mensaje, string valor)
+        {
+            return $"{mensaje} {valor}";
+        }
         #endregion
-
     }
 }

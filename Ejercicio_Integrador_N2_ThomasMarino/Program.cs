@@ -8,8 +8,19 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            // Me aseguro de que esten creados los directorios necesarios para leer archivos.
+            if (!Directory.Exists("..\\..\\..\\..\\Carrito"))
+            {
+                Directory.CreateDirectory("..\\..\\..\\..\\Carrito");
+            }
+            if (!Directory.Exists("..\\..\\..\\..\\Compras"))
+            {
+                Directory.CreateDirectory("..\\..\\..\\..\\Compras");
+            }
+            if (!Directory.Exists("..\\..\\..\\..\\Ventas"))
+            {
+                Directory.CreateDirectory("..\\..\\..\\..\\Ventas");
+            }
             ApplicationConfiguration.Initialize();
             Application.Run(new FormIngreso());
         }

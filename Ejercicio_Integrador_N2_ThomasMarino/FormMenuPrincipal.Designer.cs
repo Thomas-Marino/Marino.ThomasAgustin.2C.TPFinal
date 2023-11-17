@@ -33,18 +33,18 @@
             LblSaludo = new Label();
             pictureBox1 = new PictureBox();
             PanelNavegador = new Panel();
+            panel5 = new Panel();
+            BtnVerCarrito = new Button();
             panel4 = new Panel();
-            button4 = new Button();
+            BtnMisCompras = new Button();
             panel3 = new Panel();
-            BtnVentas = new Button();
+            BtnMisVentas = new Button();
             panel2 = new Panel();
             BtnExplorarProductos = new Button();
             panel1 = new Panel();
             BtnPublicarProducto = new Button();
-            button1 = new Button();
+            BtnCerrarSesion = new Button();
             PanelContenedor = new Panel();
-            panel5 = new Panel();
-            button2 = new Button();
             PanelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelNavegador.SuspendLayout();
@@ -100,67 +100,93 @@
             // 
             PanelNavegador.BackColor = SystemColors.ControlLight;
             PanelNavegador.Controls.Add(panel5);
-            PanelNavegador.Controls.Add(button2);
+            PanelNavegador.Controls.Add(BtnVerCarrito);
             PanelNavegador.Controls.Add(panel4);
-            PanelNavegador.Controls.Add(button4);
+            PanelNavegador.Controls.Add(BtnMisCompras);
             PanelNavegador.Controls.Add(panel3);
-            PanelNavegador.Controls.Add(BtnVentas);
+            PanelNavegador.Controls.Add(BtnMisVentas);
             PanelNavegador.Controls.Add(panel2);
             PanelNavegador.Controls.Add(BtnExplorarProductos);
             PanelNavegador.Controls.Add(panel1);
             PanelNavegador.Controls.Add(BtnPublicarProducto);
-            PanelNavegador.Controls.Add(button1);
+            PanelNavegador.Controls.Add(BtnCerrarSesion);
             PanelNavegador.Dock = DockStyle.Left;
             PanelNavegador.Location = new Point(0, 44);
             PanelNavegador.Name = "PanelNavegador";
             PanelNavegador.Size = new Size(193, 545);
             PanelNavegador.TabIndex = 12;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.IndianRed;
+            panel5.Location = new Point(3, 189);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(10, 39);
+            panel5.TabIndex = 10;
+            // 
+            // BtnVerCarrito
+            // 
+            BtnVerCarrito.BackColor = Color.White;
+            BtnVerCarrito.FlatAppearance.BorderColor = Color.Black;
+            BtnVerCarrito.FlatAppearance.BorderSize = 2;
+            BtnVerCarrito.FlatAppearance.MouseOverBackColor = Color.IndianRed;
+            BtnVerCarrito.FlatStyle = FlatStyle.Flat;
+            BtnVerCarrito.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnVerCarrito.Location = new Point(12, 189);
+            BtnVerCarrito.Name = "BtnVerCarrito";
+            BtnVerCarrito.Size = new Size(175, 39);
+            BtnVerCarrito.TabIndex = 9;
+            BtnVerCarrito.Text = "Carrito";
+            BtnVerCarrito.UseVisualStyleBackColor = false;
+            BtnVerCarrito.Click += BtnVerCarrito_Click;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.IndianRed;
-            panel4.Location = new Point(3, 252);
+            panel4.Location = new Point(3, 248);
             panel4.Name = "panel4";
             panel4.Size = new Size(10, 39);
             panel4.TabIndex = 8;
             // 
-            // button4
+            // BtnMisCompras
             // 
-            button4.BackColor = Color.White;
-            button4.FlatAppearance.BorderColor = Color.Black;
-            button4.FlatAppearance.BorderSize = 2;
-            button4.FlatAppearance.MouseOverBackColor = Color.IndianRed;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(12, 252);
-            button4.Name = "button4";
-            button4.Size = new Size(175, 39);
-            button4.TabIndex = 7;
-            button4.Text = "Historial de compras";
-            button4.UseVisualStyleBackColor = false;
+            BtnMisCompras.BackColor = Color.White;
+            BtnMisCompras.FlatAppearance.BorderColor = Color.Black;
+            BtnMisCompras.FlatAppearance.BorderSize = 2;
+            BtnMisCompras.FlatAppearance.MouseOverBackColor = Color.IndianRed;
+            BtnMisCompras.FlatStyle = FlatStyle.Flat;
+            BtnMisCompras.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnMisCompras.Location = new Point(12, 248);
+            BtnMisCompras.Name = "BtnMisCompras";
+            BtnMisCompras.Size = new Size(175, 39);
+            BtnMisCompras.TabIndex = 7;
+            BtnMisCompras.Text = "Mis compras";
+            BtnMisCompras.UseVisualStyleBackColor = false;
+            BtnMisCompras.Click += BtnMisCompras_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.IndianRed;
-            panel3.Location = new Point(3, 192);
+            panel3.Location = new Point(3, 307);
             panel3.Name = "panel3";
             panel3.Size = new Size(10, 39);
             panel3.TabIndex = 6;
             // 
-            // BtnVentas
+            // BtnMisVentas
             // 
-            BtnVentas.BackColor = Color.White;
-            BtnVentas.FlatAppearance.BorderColor = Color.Black;
-            BtnVentas.FlatAppearance.BorderSize = 2;
-            BtnVentas.FlatAppearance.MouseOverBackColor = Color.IndianRed;
-            BtnVentas.FlatStyle = FlatStyle.Flat;
-            BtnVentas.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnVentas.Location = new Point(12, 192);
-            BtnVentas.Name = "BtnVentas";
-            BtnVentas.Size = new Size(175, 39);
-            BtnVentas.TabIndex = 5;
-            BtnVentas.Text = "Historial de ventas";
-            BtnVentas.UseVisualStyleBackColor = false;
+            BtnMisVentas.BackColor = Color.White;
+            BtnMisVentas.FlatAppearance.BorderColor = Color.Black;
+            BtnMisVentas.FlatAppearance.BorderSize = 2;
+            BtnMisVentas.FlatAppearance.MouseOverBackColor = Color.IndianRed;
+            BtnMisVentas.FlatStyle = FlatStyle.Flat;
+            BtnMisVentas.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnMisVentas.Location = new Point(12, 307);
+            BtnMisVentas.Name = "BtnMisVentas";
+            BtnMisVentas.Size = new Size(175, 39);
+            BtnMisVentas.TabIndex = 5;
+            BtnMisVentas.Text = "Mis Ventas";
+            BtnMisVentas.UseVisualStyleBackColor = false;
+            BtnMisVentas.Click += BtnMisVentas_Click;
             // 
             // panel2
             // 
@@ -210,19 +236,19 @@
             BtnPublicarProducto.UseVisualStyleBackColor = false;
             BtnPublicarProducto.Click += BtnPublicarProducto_Click;
             // 
-            // button1
+            // BtnCerrarSesion
             // 
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatAppearance.MouseOverBackColor = Color.Red;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(46, 504);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Cerrar sesión";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BtnCerrarSesion.FlatAppearance.BorderSize = 2;
+            BtnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.Red;
+            BtnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            BtnCerrarSesion.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnCerrarSesion.Location = new Point(46, 504);
+            BtnCerrarSesion.Name = "BtnCerrarSesion";
+            BtnCerrarSesion.Size = new Size(97, 29);
+            BtnCerrarSesion.TabIndex = 0;
+            BtnCerrarSesion.Text = "Cerrar sesión";
+            BtnCerrarSesion.UseVisualStyleBackColor = true;
+            BtnCerrarSesion.Click += BtnCerrarSesion_Click;
             // 
             // PanelContenedor
             // 
@@ -232,29 +258,6 @@
             PanelContenedor.Name = "PanelContenedor";
             PanelContenedor.Size = new Size(857, 545);
             PanelContenedor.TabIndex = 13;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.IndianRed;
-            panel5.Location = new Point(3, 311);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(10, 39);
-            panel5.TabIndex = 10;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.White;
-            button2.FlatAppearance.BorderColor = Color.Black;
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatAppearance.MouseOverBackColor = Color.IndianRed;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(12, 311);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 39);
-            button2.TabIndex = 9;
-            button2.Text = "Carrito";
-            button2.UseVisualStyleBackColor = false;
             // 
             // FormMenuPrincipal
             // 
@@ -283,18 +286,18 @@
         private PictureBox pictureBox1;
         private Label LblSaludo;
         private Panel PanelNavegador;
-        private Button button1;
+        private Button BtnCerrarSesion;
         private Button BtnCerrarAplicacion;
         private Panel PanelContenedor;
         private Panel panel1;
         private Button BtnPublicarProducto;
         private Panel panel4;
-        private Button button4;
-        private Panel panel3;
-        private Button BtnVentas;
+        private Button BtnMisCompras;
         private Panel panel2;
         private Button BtnExplorarProductos;
         private Panel panel5;
-        private Button button2;
+        private Button BtnVerCarrito;
+        private Panel panel3;
+        private Button BtnMisVentas;
     }
 }

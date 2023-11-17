@@ -13,6 +13,12 @@
     <Compile Update="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormMisCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormMisVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormPublicarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +26,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ListaDeProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ListaDeProductosComprados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ListaDeProductosEnCarrito.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ListaDeProductosVendidos.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

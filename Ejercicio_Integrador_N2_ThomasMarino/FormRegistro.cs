@@ -11,14 +11,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 using Entidades.BaseDeDatos;
+using Entidades.Eventos;
 
 namespace Ejercicio_Integrador_N2_ThomasMarino
 {
     public partial class FormRegistro : Form
     {
+        CreacionDeUsuario creacionDeUsuario;
         public FormRegistro()
         {
             InitializeComponent();
+            creacionDeUsuario = new CreacionDeUsuario();
+            creacionDeUsuario.OnCreacionDeUsuario += MostrarInformacionUsuarioGeneradoPorMSGBox; // Suscribo al metodo para que funcione.
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -31,34 +35,15 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         {
             try
             {
-                Usuario usuario = new Usuario(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
-                GestorPersonasSqlDelivered.CrearNuevaCuenta(usuario);
-                MessageBox.Show($"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}", "Cuenta generada con éxito!");
+                //Usuario usuario = new Usuario(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
+                //GestorPersonasSqlDelivered.AñadirUsuario(usuario);
+                //MessageBox.Show($"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}", "Cuenta generada con éxito!");
+                creacionDeUsuario.CrearCuenta(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
                 FormIngreso formIngreso = Application.OpenForms.OfType<FormIngreso>().FirstOrDefault();
                 formIngreso.Show();
                 this.Close();
             }
-            catch (NombreinvalidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ApellidoInvalidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (DniInvalidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (UsuarioInvalidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ContraseñaInvalidaException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (BaseDeDatosException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -67,6 +52,11 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         private void FormRegistro_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MostrarInformacionUsuarioGeneradoPorMSGBox(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Cuenta generada con éxito!");
         }
 
         private void FormRegistro_FormClosing(object sender, FormClosingEventArgs e)
