@@ -8,7 +8,14 @@ namespace Entidades.MetodosDeExtension
 {
     public static class Ordenamiento
     {
-        public static void BubbleSortPorKey(this List<Dictionary<string, object>> lista, string ordenamiento, string key)
+        /// <summary>
+        /// Método que se encarga de modificar los valores de una lista de diccionarios 
+        /// ordenandolos mediante el método de 'Burbujeo' centrandose en su precio.
+        /// </summary>
+        /// <param name="lista">Lista que contiene los diccionarios.</param>
+        /// <param name="ordenamiento">Dependiendo de que opción de ordenamiento se ingrese, la función burbujeará en torno a lo solicitado.</param>
+        /// <param name="key">Primer key del diccionario a ordenar.</param>
+        public static void BubbleSortPorPrecio(this List<Dictionary<string, object>> lista, string ordenamiento, string key)
         {
             int tam = lista.Count;
 
