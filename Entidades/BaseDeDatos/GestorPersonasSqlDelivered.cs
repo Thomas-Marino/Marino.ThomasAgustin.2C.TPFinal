@@ -21,6 +21,14 @@ namespace Entidades.BaseDeDatos
         }
 
         #region "Verificaciones datos"
+        /// <summary>
+        /// Método encargado de verificar la existencia de un usuario en la base de datos.
+        /// </summary>
+        /// <param name="usuario">Nombre de usuario a verificar</param>
+        /// <returns>
+        /// True si el usuario está presente en la base de datos.
+        /// False en caso contrario.
+        /// </returns>
         public static bool VerificarExistenciaUsuario(string usuario)
         {
             try
@@ -50,6 +58,14 @@ namespace Entidades.BaseDeDatos
                 return false;
             }
         }
+        /// <summary>
+        /// Método encargado de verificar la existencia del dni de un usuario registrado en la base de datos.
+        /// </summary>
+        /// <param name="dni">Dni a ser buscado</param>
+        /// <returns>
+        /// True si se encuentra el dni dentro de la base de datos.
+        /// False caso contrario.
+        /// </returns>
         public static bool VerificarExistenciaDni(int dni)
         {
             try
@@ -80,6 +96,18 @@ namespace Entidades.BaseDeDatos
             }
         }
         #endregion
+
+        #region "Importación/Exportación de información"
+        /// <summary>
+        /// Método que cumple con el propósito de realizar la autenticación de un usuario,
+        /// comparando las credenciales proporcionadas con la base de datos.
+        /// </summary>
+        /// <param name="usuario">Nombre de usuario para la autenticación.</param>
+        /// <param name="contraseña">Contraseña asociada al usuario para la autenticación.</param>
+        /// <returns>
+        ///  True si las credenciales son válidas y se encuentra el usuario en la base de datos.
+        ///  False si las credenciales son inválidas o el usuario no existe en la base de datos.
+        /// </returns>
         public static bool LoggearCuenta(string usuario, string contraseña) 
         {
             try
@@ -110,7 +138,15 @@ namespace Entidades.BaseDeDatos
                 return false;
             }
         }
-
+        /// <summary>
+        /// Método encargado de realizar una busqueda de un nombre de usuario dentro de la base
+        /// de datos.
+        /// </summary>
+        /// <param name="usuario">Nombre de usuario a buscar</param>
+        /// <returns>
+        /// Si el nombre de usuario está presente en la base de datos, será retornado como string.
+        /// Caso contrario, retornará un string informando que no ha sido encontrado.
+        /// </returns>
         public static string ObtenerNombreDelUsuario(string usuario)
         {
             try
@@ -137,8 +173,15 @@ namespace Entidades.BaseDeDatos
                 return $"Hubo un error al obtener el nombre del usuario. {ex}";
             }
         }
-
-        public static bool CrearNuevaCuenta(Usuario usuario)
+        /// <summary>
+        /// Método encargado de añadir un nuevo usuario a la base de datos.
+        /// </summary>
+        /// <param name="usuario">usuario a añadir.</param>
+        /// <returns>
+        /// True si el usuario pudo añadirse con éxito a la base de datos.
+        /// </returns>
+        /// <exception cref="BaseDeDatosException"></exception>
+        public static bool AñadirUsuario(Usuario usuario)
         {
             try
             {
@@ -165,5 +208,6 @@ namespace Entidades.BaseDeDatos
                 throw new BaseDeDatosException("Error al añadir un usuario a la base de datos.", ex);
             }
         }
+        #endregion
     }
 }

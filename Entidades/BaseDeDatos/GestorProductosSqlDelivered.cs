@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using Entidades.Excepciones;
 using Entidades.Modelos;
 using Entidades.MetodosDeExtension;
+using System.Runtime.Versioning;
 
 namespace Entidades.BaseDeDatos
 {
@@ -19,6 +20,16 @@ namespace Entidades.BaseDeDatos
             stringConnection = "Server=.;Database=DeliveredDB;Trusted_Connection=True;";
         }
 
+        #region "Importación/Exportación de datos."
+        /// <summary>
+        /// Método encargado de añadir un nuevo producto a la base de datos.
+        /// </summary>
+        /// <param name="producto">producto a añadir</param>
+        /// <param name="publicador">Nombre del publicador del producto</param>
+        /// <returns>
+        /// True si el producto ha sido añadido con éxito.
+        /// </returns>
+        /// <exception cref="BaseDeDatosException"></exception>
         public static bool CrearNuevoProducto(Producto producto, string publicador)
         {
             try
@@ -46,6 +57,13 @@ namespace Entidades.BaseDeDatos
                 throw new BaseDeDatosException("Error al añadir un producto a la base de datos.", ex);
             }
         }
+        /// <summary>
+        /// Método encargado de importar todos los productos dentro de la base de datos.
+        /// </summary>
+        /// <returns>
+        /// Lista de diccionarios con todos los productos de la base de datos.
+        /// </returns>
+        /// <exception cref="BaseDeDatosException"></exception>
         public static List<Dictionary<string, object>> ObtenerTodosLosProductos()
         {
             try
@@ -86,6 +104,18 @@ namespace Entidades.BaseDeDatos
                 throw new BaseDeDatosException("Hubo un error al obtener los productos.", ex);
             }
         }
+        /// <summary>
+        /// Método encargado de importar los productos de la base de datos, seleccionando solo los
+        /// deseados por el usuario mediante el uso de "filtros".
+        /// </summary>
+        /// <param name="categoria">Categoria de productos a filtrar.</param>
+        /// <param name="filtrarPorNombre">Nombre del producto a filtrar.</param>
+        /// <param name="filtrarPorPublicador">Nombre del publicador a filtrar.</param>
+        /// <param name="orden">"Ascendente" si se desea ordenar los productos por precio ascendente o "Descendente" en caso contrario</param>
+        /// <returns>
+        /// Lista de diccionarios <string, object> con los productos obtenidos a través de los filtros realizados.
+        /// </returns>
+        /// <exception cref="BaseDeDatosException"></exception>
         public static List<Dictionary<string, object>> ObtenerProductosFiltrados
             (string categoria, string filtrarPorNombre, string filtrarPorPublicador, string orden)
         {
@@ -181,13 +211,36 @@ namespace Entidades.BaseDeDatos
                 throw new BaseDeDatosException("Hubo un error al obtener los productos.", ex);
             }
         }
-        public static void RestarStockProducto(int cantidad, int id_producto)
-        {
+        #endregion
 
-        }
-        public static void SumarStockProducto(int cantidad, int id_producto)
+        #region "Modificacion de datos."
+        /// <summary>
+        /// Método encargado de restar el stock de un producto dentro de la base de datos
+        /// </summary>
+        /// <param name="cantidad">Cantidad a restar del stock del producto</param>
+        /// <param name="id_producto">Id del producto a modificar</param>
+        /// <exception cref="BaseDeDatosException"></exception>
+        public static void RestarStockProducto(string cantidad, string id_producto)
         {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(GestorProductosSqlDelivered.stringConnection))
+                {
+                    SqlCommand command;
 
+                    string query = $"UPDATE productos SET stock=stock-{int.Parse(cantidad)} WHERE id_producto={int.Parse(id_producto)}";
+
+                    command = new SqlCommand(query, connection);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new BaseDeDatosException("Hubo un error al modificar el stock del producto.", e);
+            }
         }
+        #endregion
     }
 }
