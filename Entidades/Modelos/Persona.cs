@@ -1,18 +1,14 @@
 ﻿using Entidades.BaseDeDatos;
 using Entidades.Excepciones;
+using Entidades.Interfaces;
 
 namespace Entidades.Modelos
 {
-    public class Persona
+    public class Persona : IValidacionesPersona
     {
         private string nombre;
         private string apellido;
         private int dni;
-
-        public string Nombre { get { return nombre; } }
-        public string Apellido { get { return apellido; } }
-        public int Dni { get {return dni; } }
-
 
         public Persona(string nombre, string apellido, string dni)
         {
@@ -21,8 +17,24 @@ namespace Entidades.Modelos
             this.dni = ValidacionDni(dni);
         }
 
+        #region "Propiedades"
+        public string Nombre { get { return nombre; } }
+        public string Apellido { get { return apellido; } }
+        public int Dni { get {return dni; } }
+        #endregion
+
         #region "Validaciones"
-        private string ValidacionNombre(string nombre)
+        /// <summary>
+        /// Método encargado de validar que el nombre ingresado no esté contenido de espacios en blanco ni sea nulo,
+        /// que su longitud no sea mayor a 30 y que no tenga caracteres invalidos.
+        /// </summary>
+        /// <param name="nombre">Nombre a ingresar</param>
+        /// <returns>
+        /// Nombre validado.
+        /// </returns>
+        /// <exception cref="NombreinvalidoException"></exception>
+        /// 
+        public string ValidacionNombre(string nombre)
         {
             if (!string.IsNullOrWhiteSpace(nombre)) 
             {
@@ -30,21 +42,31 @@ namespace Entidades.Modelos
                 {
                     throw new NombreinvalidoException("Error. El nombre ingresado es muy largo.");
                 }
-                foreach(char c in nombre)
+                foreach (char c in nombre)
                 {
                     if (c != ' ' && !char.IsLetter(c))
                     {
                         throw new NombreinvalidoException("Error. El nombre solo debe contener letras.");
                     }
                 }
-                return nombre;
+
+                return EliminarEspacios(nombre);
             }
             else
             {
                 throw new NombreinvalidoException("Error. Ingrese un nombre.");
             }
         }
-        private string ValidacionApellido(string apellido)
+        /// <summary>
+        /// Método encargado de validar que el apellido ingresado no esté contenido de espacios en blanco ni sea nulo,
+        /// que su longitud no sea mayor a 30 y que no tenga caracteres invalidos.
+        /// </summary>
+        /// <param name="apellido">Apellido a ingresar.</param>
+        /// <returns>
+        /// Apellido validado.
+        /// </returns>
+        /// <exception cref="ApellidoInvalidoException"></exception>
+        public string ValidacionApellido(string apellido)
         {
             if (!string.IsNullOrWhiteSpace(apellido))
             {
@@ -59,14 +81,23 @@ namespace Entidades.Modelos
                         throw new ApellidoInvalidoException("Error. El apellido solo debe contener letras.");
                     }
                 }
-                return apellido;
+                return EliminarEspacios(nombre);
             }
             else
             {
                 throw new ApellidoInvalidoException("Error. Ingrese un apellido.");
             }
         }
-        private int ValidacionDni(string dni)
+        /// <summary>
+        /// Método encargado de validar que el dni ingresado tenga una longitud de 7 u 8 números,
+        /// que no contenga carácteres inválidos ni que comience con 0
+        /// </summary>
+        /// <param name="dni">Dni a validar</param>
+        /// <returns>
+        /// Dni validado.
+        /// </returns>
+        /// <exception cref="DniInvalidoException"></exception>
+        public int ValidacionDni(string dni)
         {
             if (dni.Length == 8 || dni.Length == 7) 
             {
@@ -97,6 +128,26 @@ namespace Entidades.Modelos
             {
                 throw new DniInvalidoException("Error en el ingreso del DNI. Cantidad de caracteres invalida.");
             }
+        }
+        /// <summary>
+        /// Método encargado de eliminar los espacios dentro de los strings.
+        /// </summary>
+        /// <param name="stringIngresado">string a eeliminar espacios.</param>
+        /// <returns>
+        /// String ingresado sin espacios
+        /// </returns>
+        private string EliminarEspacios(string stringIngresado)
+        {
+            string stringIngresadoCorregido = "";
+            
+            foreach (char c in stringIngresado)
+            {
+                if (c != ' ')
+                {
+                    stringIngresadoCorregido += c;
+                }
+            }
+            return stringIngresadoCorregido;
         }
         #endregion
     }
