@@ -10,6 +10,11 @@ namespace Entidades.Archivos
 {
     public class SerializadorArchivos<T>
     {
+        /// <summary>
+        /// Método encargado de serializar en un archivo json un dato genérico.
+        /// </summary>
+        /// <param name="datos">dato a serializar.</param>
+        /// <param name="rutaArchivo">ruta en la que se almacenará el json.</param>
         public void Serializar(T datos, string rutaArchivo)
         {
             try
@@ -25,10 +30,18 @@ namespace Entidades.Archivos
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al serializar: {ex.Message}");
+                throw new Exception($"Error al serializar: {ex.Message}");
             }
         }
 
+        /// <summary>
+        /// Método encargado de deserializar un archivo.
+        /// </summary>
+        /// <param name="rutaArchivo">ruta del archivo a deserializar.</param>
+        /// <returns>
+        /// Un tipo de dato genérico conteniendo los datos del archivo deserializado.
+        /// </returns>
+        /// <exception cref="Exception"></exception>
         public T Deserializar(string rutaArchivo)
         {
             try
@@ -42,7 +55,7 @@ namespace Entidades.Archivos
             }
             catch (Exception ex)
             {
-                throw new Exception("", ex);
+                throw new Exception("Error al deserializar", ex);
             }
         }
     }
