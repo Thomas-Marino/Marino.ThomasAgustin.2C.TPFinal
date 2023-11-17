@@ -69,7 +69,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         #region "Metodos propios"
         private void FiltrarProductos()
         {
-
             flowLayoutPanel1.Controls.Clear();
 
             if (TxbFiltrarNombre.Text != null)
