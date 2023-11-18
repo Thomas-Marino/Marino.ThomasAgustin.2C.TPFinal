@@ -24,7 +24,13 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         }
 
         #region "Metodos"
-        private void AgregarProductosAlPanel(List<Dictionary<string, object>> datosObtenidos, ListaDeProductosComprados[] listaDeProductosComprados)
+        /// <summary>
+        /// Método encargado de añadir los productos contenidos en una lista de diccionarios al panel.
+        /// </summary>
+        /// <param name="datosObtenidos">Productos obtenidos del archivo json</param>
+        /// <param name="listaDeProductosComprados">Lista de listaDeProductosComprados(UserControl.)</param>
+        private void AgregarProductosAlPanel
+            (List<Dictionary<string, object>> datosObtenidos, ListaDeProductosComprados[] listaDeProductosComprados)
         {
             int i = 0;
             foreach (var producto in datosObtenidos)
@@ -44,6 +50,9 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 i++;
             }
         }
+        /// <summary>
+        /// Método encargado de mostrar en el panel todos los productos comprados del usuario.
+        /// </summary>
         internal void MostrarProductos()
         {
             FlpProductosComprados.Controls.Clear();

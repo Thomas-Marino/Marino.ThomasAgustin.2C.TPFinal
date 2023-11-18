@@ -40,7 +40,7 @@ namespace Entidades.Eventos
         /// </returns>
         private string MostrarInformacionUsuarioGenerado(Usuario usuario)
         {
-            return $"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}";
+            return $"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}\nContraseña: {usuario.Contraseña}";
         }
     }
 }

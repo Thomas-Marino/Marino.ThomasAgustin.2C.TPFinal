@@ -81,7 +81,7 @@ namespace Entidades.Modelos
                         throw new ApellidoInvalidoException("Error. El apellido solo debe contener letras.");
                     }
                 }
-                return EliminarEspacios(nombre);
+                return EliminarEspacios(apellido);
             }
             else
             {

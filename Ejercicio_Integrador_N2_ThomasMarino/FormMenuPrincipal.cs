@@ -51,10 +51,14 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             formIngreso.Show();
             this.Close();
         }
+
         #region "Metodos"
+        /// <summary>
+        /// Método encargado de abrir un nuevo form dentro del panel contenedor del menu principal.
+        /// </summary>
+        /// <param name="formHijo">Form a abrir.</param>
         private void AbrirForm(object formHijo)
         {
-            // Código sacado de un tutorial.
             if (this.PanelContenedor.Controls.Count > 0) // Preguntamos si existe algun control en el panel.
             {
                 this.PanelContenedor.Controls.RemoveAt(0); // De ser true, lo elimino.
@@ -68,5 +72,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         }
 
         #endregion
+
     }
 }

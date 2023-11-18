@@ -38,10 +38,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 TxbNombreProducto.ForeColor = Color.Red;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (CategoriaDeProductoInvalidaException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             catch (PrecioDelProductoInvalidoException ex)
             {
                 TxbPrecioProducto.ForeColor = Color.Red;
@@ -52,7 +48,7 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 TxbStockProducto.ForeColor = Color.Red;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (BaseDeDatosException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

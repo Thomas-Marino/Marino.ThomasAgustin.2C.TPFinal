@@ -200,7 +200,7 @@ namespace Entidades.BaseDeDatos
                         }
                         if (orden != null)
                         {
-                            productos.BubbleSortPorKey(orden, "precioDelProducto");
+                            productos.BubbleSortPorPrecio(orden, "precioDelProducto");
                         }
                     }
                     return productos;

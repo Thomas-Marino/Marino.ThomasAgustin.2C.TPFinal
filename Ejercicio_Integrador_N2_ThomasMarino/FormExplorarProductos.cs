@@ -66,7 +66,11 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             categoria = RdbFiltrarVehiculos.Text;
         }
         #endregion
+
         #region "Metodos propios"
+        /// <summary>
+        /// Método encargado de filtrar los productos y agregarlos en el panel.
+        /// </summary>
         private void FiltrarProductos()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -86,7 +90,9 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
 
             AgregarProductosAlPanel(productosObtenidos, listaDeProductos);
         }
-
+        /// <summary>
+        /// Método encargado de mostrar todos los productos en el panel.
+        /// </summary>
         private void MostrarProductos()
         {
             List<Dictionary<string, object>> productosObtenidos = new List<Dictionary<string, object>>();
@@ -94,7 +100,11 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             ListaDeProductos[] listaDeProductos = new ListaDeProductos[productosObtenidos.Count];
             AgregarProductosAlPanel(productosObtenidos, listaDeProductos);
         }
-
+        /// <summary>
+        /// Método encargado de añadir los productos contenidos en una lista de diccionarios al panel.
+        /// </summary>
+        /// <param name="productosObtenidos">Productos obtenidos de la base de datos.</param>
+        /// <param name="listaDeProductos">Lista de listaDeProductos(UserControl.)</param>
         private void AgregarProductosAlPanel(List<Dictionary<string, object>> productosObtenidos, ListaDeProductos[] listaDeProductos)
         {
             int i = 0;
@@ -116,7 +126,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 i++;
             }
         }
-
         #endregion
     }
 }

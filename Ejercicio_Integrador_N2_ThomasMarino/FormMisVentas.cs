@@ -23,26 +23,35 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             MostrarProductos();
         }
 
-        private void AgregarProductosAlPanel(List<Dictionary<string, object>> datosObtenidos, ListaDeProductosVendidos[] listaDeProductosComprados)
+        #region "Métodos"
+        /// <summary>
+        /// Método encargado de añadir los productos vendidos por el usuario al panel.
+        /// </summary>
+        /// <param name="datosObtenidos">Productos obtenidos del archivo json</param>
+        /// <param name="listaDeProductosVendidos">Lista de listaDeProductosVendidos(UserControl.)</param>
+        private void AgregarProductosAlPanel(List<Dictionary<string, object>> datosObtenidos, ListaDeProductosVendidos[] listaDeProductosVendidos)
         {
             int i = 0;
             foreach (var producto in datosObtenidos)
             {
-                listaDeProductosComprados[i] = new ListaDeProductosVendidos();
-                listaDeProductosComprados[i].IdProducto = $"{producto["ID"]}";
-                listaDeProductosComprados[i].NombreDelProductoVendido = $"{producto["nombre"]}";
-                listaDeProductosComprados[i].ImagenCategoriaProducto = $"{producto["categoria"]}";
-                listaDeProductosComprados[i].CategoriaDelProducto = $"{producto["categoria"]}";
-                listaDeProductosComprados[i].PrecioUnitarioDelProducto = $"{producto["precio unitario"]}";
-                listaDeProductosComprados[i].CantidadVendidaDelProducto = $"{producto["cantidad"]}";
-                listaDeProductosComprados[i].PrecioTotalPagado = $"{producto["precio pagado"]}";
-                listaDeProductosComprados[i].CompradorDelProducto = $"{producto["comprador"]}";
-                listaDeProductosComprados[i].FechaDeCompra = $"{producto["fecha de compra"]}";
+                listaDeProductosVendidos[i] = new ListaDeProductosVendidos();
+                listaDeProductosVendidos[i].IdProducto = $"{producto["ID"]}";
+                listaDeProductosVendidos[i].NombreDelProductoVendido = $"{producto["nombre"]}";
+                listaDeProductosVendidos[i].ImagenCategoriaProducto = $"{producto["categoria"]}";
+                listaDeProductosVendidos[i].CategoriaDelProducto = $"{producto["categoria"]}";
+                listaDeProductosVendidos[i].PrecioUnitarioDelProducto = $"{producto["precio unitario"]}";
+                listaDeProductosVendidos[i].CantidadVendidaDelProducto = $"{producto["cantidad"]}";
+                listaDeProductosVendidos[i].PrecioTotalPagado = $"{producto["precio pagado"]}";
+                listaDeProductosVendidos[i].CompradorDelProducto = $"{producto["comprador"]}";
+                listaDeProductosVendidos[i].FechaDeCompra = $"{producto["fecha de compra"]}";
 
-                FlpProductosVendidos.Controls.Add(listaDeProductosComprados[i]);
+                FlpProductosVendidos.Controls.Add(listaDeProductosVendidos[i]);
                 i++;
             }
         }
+        /// <summary>
+        /// Método encargado de mostrar en el panel todos los productos vendidos del usuario.
+        /// </summary>
         internal void MostrarProductos()
         {
             FlpProductosVendidos.Controls.Clear();
@@ -60,5 +69,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                 AgregarProductosAlPanel(datosObtenidos, listaDeProductos);
             }
         }
+        #endregion
     }
 }

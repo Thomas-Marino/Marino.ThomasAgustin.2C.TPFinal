@@ -29,11 +29,7 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void BtnAñadirAlCarrito_Click(object sender, EventArgs e)
         {
             try
@@ -142,12 +138,26 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         }
 
         #endregion
+
         #region "métodos"
+        /// <summary>
+        /// Método encargado de limitar la cantidad maxima y minima de compra dependiendo
+        /// del stock del producto.
+        /// </summary>
+        /// <param name="limite">Limite máximo de la compra</param>
         public void AsignarLimiteDeCompra(decimal limite)
         {
             this.NUDCantidadProductoDeseada.Maximum = limite;
             this.NUDCantidadProductoDeseada.Minimum = 1;
         }
+        /// <summary>
+        /// Método encargado de asignarle una imagen al producto publicado
+        /// dependiendo de la categoría seleccionada.
+        /// </summary>
+        /// <param name="categoria">Categoria ingresada.</param>
+        /// <returns>
+        /// Imagen de la categoria ingresada.
+        /// </returns>
         private static Image AsignadorDeImagenes(string categoria)
         {
             switch (categoria)
@@ -164,6 +174,14 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                     return Resources.ImgError;
             }
         }
+        /// <summary>
+        /// Método encargado de darle un formato a los strings deseados.
+        /// </summary>
+        /// <param name="mensaje">Mensaje a incluir en el string.</param>
+        /// <param name="valor">Valor de la propiedad a mostrar.</param>
+        /// <returns>
+        /// String formateado.
+        /// </returns>
         private static string FormatearString(string mensaje, string valor)
         {
             return $"{mensaje} {valor}";

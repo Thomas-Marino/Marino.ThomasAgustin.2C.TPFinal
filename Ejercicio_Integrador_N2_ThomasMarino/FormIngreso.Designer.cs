@@ -60,7 +60,7 @@
             BtnCrearCuenta.TabIndex = 1;
             BtnCrearCuenta.Text = "Crear cuenta";
             BtnCrearCuenta.UseVisualStyleBackColor = true;
-            BtnCrearCuenta.Click += button1_Click;
+            BtnCrearCuenta.Click += BtnCrearCuenta_Click;
             // 
             // label1
             // 
@@ -129,7 +129,7 @@
             BtnIngresar.TabIndex = 9;
             BtnIngresar.Text = "Ingresar";
             BtnIngresar.UseVisualStyleBackColor = true;
-            BtnIngresar.Click += button2_Click;
+            BtnIngresar.Click += BtnIngresar_Click;
             // 
             // panel1
             // 
@@ -163,7 +163,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ingreso a Delivered";
             FormClosing += FormIngreso_FormClosing;
-            Load += FormIngreso_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

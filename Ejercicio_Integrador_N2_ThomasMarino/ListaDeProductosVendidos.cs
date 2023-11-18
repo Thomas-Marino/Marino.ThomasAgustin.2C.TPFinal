@@ -85,7 +85,16 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             set { _compradorDelProducto = value; LblCompradorProducto.Text = FormatearString("Comprador:", value); }
         }
         #endregion
+
         #region "Metodos"
+        /// <summary>
+        /// Método encargado de asignarle una imagen al producto publicado
+        /// dependiendo de la categoría seleccionada.
+        /// </summary>
+        /// <param name="categoria">Categoria ingresada.</param>
+        /// <returns>
+        /// Imagen de la categoria ingresada.
+        /// </returns>
         private Image AsignadorDeImagenes(string categoria)
         {
             switch (categoria)
@@ -102,6 +111,14 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
                     return Resources.ImgError;
             }
         }
+        /// <summary>
+        /// Método encargado de darle un formato a los strings deseados.
+        /// </summary>
+        /// <param name="mensaje">Mensaje a incluir en el string.</param>
+        /// <param name="valor">Valor de la propiedad a mostrar.</param>
+        /// <returns>
+        /// String formateado.
+        /// </returns>
         private string FormatearString(string mensaje, string valor)
         {
             return $"{mensaje} {valor}";

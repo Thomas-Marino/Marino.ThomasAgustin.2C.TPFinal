@@ -165,7 +165,7 @@
             BtnVolver.TabIndex = 12;
             BtnVolver.Text = "Volver";
             BtnVolver.UseVisualStyleBackColor = true;
-            BtnVolver.Click += button2_Click;
+            BtnVolver.Click += BtnVolver_Click;
             // 
             // label7
             // 
@@ -214,8 +214,6 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Creacion de cuenta en Delivered";
-            FormClosing += FormRegistro_FormClosing;
-            Load += FormRegistro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

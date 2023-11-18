@@ -24,7 +24,8 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             creacionDeUsuario = new CreacionDeUsuario();
             creacionDeUsuario.OnCreacionDeUsuario += MostrarInformacionUsuarioGeneradoPorMSGBox; // Suscribo al metodo para que funcione.
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
             FormIngreso formIngreso = Application.OpenForms.OfType<FormIngreso>().FirstOrDefault();
             formIngreso.Show();
@@ -35,9 +36,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         {
             try
             {
-                //Usuario usuario = new Usuario(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
-                //GestorPersonasSqlDelivered.AñadirUsuario(usuario);
-                //MessageBox.Show($"Nombre: {usuario.Nombre}\nApellido: {usuario.Apellido}\nDni: {usuario.Dni}\nusuario: {usuario.NombreUsuario}", "Cuenta generada con éxito!");
                 creacionDeUsuario.CrearCuenta(TxbNombre.Text, TxbApellido.Text, TxbDNI.Text, TxbUsuario.Text, TxbContraseña.Text);
                 FormIngreso formIngreso = Application.OpenForms.OfType<FormIngreso>().FirstOrDefault();
                 formIngreso.Show();
@@ -49,19 +47,12 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             }
         }
 
-        private void FormRegistro_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #region "Métodos"
         private void MostrarInformacionUsuarioGeneradoPorMSGBox(string mensaje)
         {
             MessageBox.Show(mensaje, "Cuenta generada con éxito!");
         }
+        #endregion
 
-        private void FormRegistro_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
     }
 }
