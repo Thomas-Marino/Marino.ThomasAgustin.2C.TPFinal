@@ -2755,11 +2755,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\TestsUnitarios\\TestsUnitarios.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\TestsUnitarios\\TestsUnitarios.csproj",
       "projectName": "TestsUnitarios",
-      "projectPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\TestsUnitarios\\TestsUnitarios.csproj",
+      "projectPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\TestsUnitarios\\TestsUnitarios.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\TestsUnitarios\\obj\\",
+      "outputPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\TestsUnitarios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2776,8 +2776,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj": {
-              "projectPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj"
+            "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj"
             }
           }
         }

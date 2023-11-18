@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-        "outputPath": "D:\\Facultad\\Progra_Labo_II\\Proyectos\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\thoma\\OneDrive\\Escritorio\\Ejercicio_Integrador_2_Labo2\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
