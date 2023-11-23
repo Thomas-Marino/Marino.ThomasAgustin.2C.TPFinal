@@ -8,6 +8,14 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
         [STAThread]
         static void Main()
         {
+            Task tareaCrearDirectoriosNecesarios = new Task(CrearDirectoriosNecesarios);
+            tareaCrearDirectoriosNecesarios.Start();
+            ApplicationConfiguration.Initialize();
+            Application.Run(new FormIngreso());
+        }
+
+        static void CrearDirectoriosNecesarios()
+        {
             // Me aseguro de que esten creados los directorios necesarios para leer archivos.
             if (!Directory.Exists("..\\..\\..\\..\\Carrito"))
             {
@@ -21,8 +29,6 @@ namespace Ejercicio_Integrador_N2_ThomasMarino
             {
                 Directory.CreateDirectory("..\\..\\..\\..\\Ventas");
             }
-            ApplicationConfiguration.Initialize();
-            Application.Run(new FormIngreso());
         }
     }
 }
